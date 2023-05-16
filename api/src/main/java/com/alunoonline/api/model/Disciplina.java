@@ -1,24 +1,23 @@
 package com.alunoonline.api.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Aluno implements Serializable {
+@Data
+public class Disciplina implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
-    private String email;
-    private String curso;
+
+    @ManyToOne
+    @JoinColumn(name = "professor_id")
+    private Professor professor;
 }
