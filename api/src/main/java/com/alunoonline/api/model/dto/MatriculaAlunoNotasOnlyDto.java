@@ -10,6 +10,4 @@ import lombok.NoArgsConstructor;
 public class MatriculaAlunoNotasOnlyDto {
     private Double nota1;
     private Double nota2;
-
-
 }
